@@ -1,0 +1,44 @@
+﻿<Window x:Class="PictionaryClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PictionaryClient"
+        mc:Ignorable="d"
+        Title="PictionaryClient" Height="480" Width="720" Closing="Window_Closing">
+    <Grid Background="#FFF1F1F1">
+
+        <Canvas x:Name="paintArea" Margin="10,10,220,10" Background="White" MouseDown="Canvas_MouseDown" MouseMove="Canvas_MouseMove"/>
+        <Label x:Name="labelServerIp" Content="Server IP" Margin="0,7,148,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="56"/>
+        <TextBox x:Name="textBoxServerIp" Height="23" Margin="0,10,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="Right" Width="120"/>
+        <Label x:Name="labelServerPort" Content="Server port" Margin="0,36,135,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="69"/>
+        <TextBox x:Name="textBoxServerPort" Height="23" Margin="0,39,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="Right" Width="120"/>
+        <Label x:Name="labelStatus" Content="Status" Margin="0,64,162,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="42"/>
+        <TextBox x:Name="textBoxStatus" Height="23" Margin="0,67,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="Right" Width="120" IsReadOnlyCaretVisible="True" IsEnabled="False"/>
+        <Button x:Name="buttonConnect" Content="Connect" Margin="0,105,107,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Click="buttonConnect_Click"/>
+        <Button x:Name="buttonDisconnect" Content="Disconnect" Margin="0,105,28,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="74" Click="buttonDisconnect_Click"/>
+        <Button x:Name="buttonColor" Content="Color" Margin="0,154,107,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="75" Click="buttonColor_Click"/>
+        <Grid x:Name="gridColors" HorizontalAlignment="Right" Margin="0,179,10,0" Width="180" Height="180" VerticalAlignment="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Rectangle x:Name="pickerRed" Fill="Red" Grid.Column="0" Grid.Row="0" MouseDown="pickerColor_MouseDown"/>
+            <Rectangle x:Name="pickerOrange" Fill="Orange" Grid.Column="1" Grid.Row="0" MouseDown="pickerColor_MouseDown"/>
+            <Rectangle x:Name="pickerYellow" Fill="Yellow" Grid.Column="2" Grid.Row="0" MouseDown="pickerColor_MouseDown"/>
+            <Rectangle x:Name="pickerGreen" Fill="Green" Grid.Column="0" Grid.Row="1" MouseDown="pickerColor_MouseDown"/>
+            <Rectangle x:Name="pickerBlue" Fill="Blue" Grid.Column="1" Grid.Row="1" MouseDown="pickerColor_MouseDown"/>
+            <Rectangle x:Name="pickerPurple" Fill="Purple" Grid.Column="2" Grid.Row="1" MouseDown="pickerColor_MouseDown"/>
+            <Rectangle x:Name="pickerBrown" Fill="Brown" Grid.Column="0" Grid.Row="2" MouseDown="pickerColor_MouseDown"/>
+            <Rectangle x:Name="pickerWhite" Fill="White" Grid.Column="1" Grid.Row="2" MouseDown="pickerColor_MouseDown"/>
+            <Rectangle x:Name="pickerBlack" Fill="Black" Grid.Column="2" Grid.Row="2" MouseDown="pickerColor_MouseDown"/>
+        </Grid>
+        <Rectangle x:Name="rectangleColor" Fill="Black" Height="20" Margin="0,154,28,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="74"/>
+    </Grid>
+</Window>
